@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Description
+TestGuru is scope of tests and testing platform where users can create, manage and pass different types of tests.
 
-Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
+# Project models
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Users
+- Roles
+- Categories
+- Test
+- Questions
+- Answers
+- will be updated
