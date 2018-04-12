@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+#
+
 Category.create([{ title: 'Life' }, { title: 'WORK' }])
 Test.create([{ title: "How to don't give up", level: 4, category_id: 1 }, { title: 'When you will be happy?', level: 3, category_id: rand(2) }, { title: 'How to rule the world', level: 15, category_id: rand(2) }])
 Question.create([{ body: 'You are happy?', test_id: 1 }, { body: 'How old are you?', test_id: 2 }, { body: 'How often you fell?', test_id: 1 }])
