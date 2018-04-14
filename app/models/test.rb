@@ -12,8 +12,8 @@ scope :hard,   -> { where(level: 5..Float::INFINITY) }
 scope :with_level, (level) -> { where(level: level ) }
 scope :by_category, ->(category) {  joins(:category).where(categories: { title: category }).order(title: :desc) }
 
-validates :title, :level, presence: true,
-                          uniqueness: true
+validates :title, presence: true,
+                  uniqueness: { scope: :level, message: "Should be  only one title-level" }
 validates :level, numericality: { only_integer: true, greater_than: 0 }
 
   def self.get_titles(category_name)
