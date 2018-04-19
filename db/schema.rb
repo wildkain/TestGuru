@@ -35,6 +35,13 @@ ActiveRecord::Schema.define(version: 20180414121201) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "passed_tests", id: false, force: :cascade do |t|
+    t.integer "test_id", null: false
+    t.integer "user_id", null: false
+    t.index ["test_id"], name: "index_passed_tests_on_test_id"
+    t.index ["user_id"], name: "index_passed_tests_on_user_id"
+  end
+
   create_table "questions", force: :cascade do |t|
     t.string "body", null: false
     t.integer "test_id"

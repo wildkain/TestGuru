@@ -1,0 +1,15 @@
+= render 'shared/errors', resource: @test
+= form_with model: @test, local: true  do |form|
+  p
+    = form.label :title, "Test title:"
+    = form.text_field :title, id: :test_title
+  p
+    = form.label :level, "Level:"
+    = form.select :level, (0..10)
+  p
+    = form.label :category_id, "Category:"
+    = form.collection_select :category_id, Category.all, :id, :title, prompt: true
+
+    = form.hidden_field :author_id, :value => 1
+  br
+    = form.submit "Create!"

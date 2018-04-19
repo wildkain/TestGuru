@@ -1,0 +1,12 @@
+h1 Create New Question
+
+form action ='/tests/#{@test.id}/questions' method="post"
+
+    input name="authenticity_token" value= form_authenticity_token type="hidden"
+   p
+    label for="question-body" Q.Body:
+    input type="text" name="question[body]" id="question-body"
+
+
+  input type="submit" value="Create!"
+
