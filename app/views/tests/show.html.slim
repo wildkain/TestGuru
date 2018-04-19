@@ -4,6 +4,17 @@ div id="new_div"
   p Level: #{@test.level}
   p Questions: #{@test.questions.count}
 
+  - @questions.each do |question|
+      p
+        = link_to question.body, question_path(question)
+        | |||
+        = link_to "Edit", edit_question_path(question)
+        | |||
+        = link_to "Delete", question_path(question), method: :delete, data: {confirm: "Are you sure?"}
+hr
+
   = link_to "Edit test", edit_test_path(@test)
   p
   = link_to "Back", tests_path
+  p
+  = link_to "Add question", new_test_question_path(@test)
