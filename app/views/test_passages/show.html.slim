@@ -1,5 +1,9 @@
 h1 Passing the "#{@test_passage.test.title}" test
 
+b
+  = @test_pasage
+div class="info"
+  li Question number: #{@test_passage.current_question_number} \ #{@test_passage.test.questions.count}
 
 b
   = @test_passage.current_question.body

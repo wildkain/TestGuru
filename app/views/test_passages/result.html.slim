@@ -1,1 +1,27 @@
 h1 The "#{@test_passage.test.title}" Test was Completed!
+br
+br
+h2 Info:
+li All questions in the test: #{@test_passage.test.questions.count}
+li Correct answered questions: #{@test_passage.correct_questions}
+
+- if @test_passage.get_percent(@test_passage) > 85
+  div class="success"
+    li Success rate: #{@test_passage.get_percent(@test_passage)} %
+    b SUCCESS!
+- else
+  div class="bad_result"
+    li Success rate: #{@test_passage.get_percent(@test_passage)} %
+    b FAILED!
+
+/!
+  - if @test_passage.get_percent(@test_passage) > 85
+    li Success rate: #{@test_passage.get_percent(@test_passage)} %
+    else
+    li Success rate1: #{@test_passage.get_percent(@test_passage)} %
+
+br
+br
+
+div class = "nav"
+  = link_to 'Back to Tests', tests_path
