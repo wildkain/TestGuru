@@ -3,7 +3,7 @@ h1 Passing the "#{@test_passage.test.title}" test
 b
 
 div class="info"
-  li Question number: #{@test_passage.current_question_number} \ #{@test_passage.test.questions.count}
+  li Question number: #{@test_passage.current_question_number} \ #{@test_passage.number_of_questions}
 
 b
   = @test_passage.current_question.body

@@ -4,7 +4,7 @@ has_many :users, through: :test_passages
 has_many :categorizations
 has_many :categories, through: :categorizations
 has_many :questions
-belongs_to :author, class_name: 'User', foreign_key: "author_id", optional: true
+belongs_to :author, class_name: 'User', foreign_key: "author_id"
 
 scope :easy,   -> { where(level: 0..1) }
 scope :medium, -> { where(level: 2..4) }
