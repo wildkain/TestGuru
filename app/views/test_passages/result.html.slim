@@ -14,12 +14,6 @@ li Correct answered questions: #{@test_passage.correct_questions}
     li Success rate: #{@test_passage.get_percent(@test_passage)} %
     b FAILED!
 
-/!
-  - if @test_passage.get_percent(@test_passage) > 85
-    li Success rate: #{@test_passage.get_percent(@test_passage)} %
-    else
-    li Success rate1: #{@test_passage.get_percent(@test_passage)} %
-
 br
 br
 
