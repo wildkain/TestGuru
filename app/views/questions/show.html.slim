@@ -1,1 +1,12 @@
-= @question.body
+p = @question.body
+
+h2 Answers
+p => link_to 'New anwer', new_question_answer_path(@question)
+
+ol
+  = render @question.answers
+
+
+=> link_to 'Edit', edit_question_path(@question)
+'|
+=< link_to 'Back', test_path(@question.test)
