@@ -1,0 +1,10 @@
+nav class="nav menu"
+  = link_to "Home", root_path
+  | |
+  - if logged_in?
+    = link_to "Tests", tests_path
+    | |
+    = link_to "LogOut!", logout_path
+  - else
+    = link_to "Login"
+  

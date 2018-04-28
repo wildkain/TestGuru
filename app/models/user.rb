@@ -3,6 +3,9 @@ class User < ApplicationRecord
   has_many :test_passages
   has_many :tests, through: :test_passages
   has_many :authored_tests, class_name: 'Test', foreign_key: :author_id
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, presence: true, format: {with: VALID_EMAIL_REGEX},
+                    uniqueness: true
 
   has_secure_password
 
