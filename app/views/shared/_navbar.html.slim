@@ -7,4 +7,6 @@ nav class="nav menu"
     = link_to "LogOut!", logout_path
   - else
     = link_to "Login"
-  
+
+-if logged_in?
+  p class="nav user" Welcome, #{current_user.name}!

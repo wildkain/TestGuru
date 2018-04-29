@@ -9,10 +9,7 @@
   </head>
 
   <body>
-  <%= render "shared/navbar" %>
-    <% if logged_in? %>
-      <p class="nav user">Welcome, <b> <%= current_user.name %>! </b> <%= link_to "Logout", logout_path %></p>
-    <% end %>
+    <%= render "shared/navbar" %>
     <%= flash_messages %>
     <%= yield %>
   </body>
