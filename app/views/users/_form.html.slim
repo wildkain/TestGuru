@@ -1,0 +1,20 @@
+
+h2 Registration form
+
+
+= form_with model: @user, local: true do |form|
+  = render 'shared/errors', resource: @user
+  p
+    = form.label :name, 'Fullname:'
+    = form.text_field :name, id: :user_name
+  p
+    = form.label :email, "Email"
+    = form.text_field :email, id: :user_email
+  p
+    = form.label :password, 'Password'
+    = form.password_field :password,  id: :user_password
+  p
+    = form.label :password_confirmation
+    = form.password_field :password_confirmation, id: :user_password_confirmation
+  p
+    = form.submit
