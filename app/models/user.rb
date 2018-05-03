@@ -1,4 +1,9 @@
 class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  #  :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable,
+         :validatable, :confirmable
 
   has_many :test_passages
   has_many :tests, through: :test_passages
@@ -7,7 +12,7 @@ class User < ApplicationRecord
   validates :email, presence: true, format: {with: VALID_EMAIL_REGEX},
                     uniqueness: true
 
-  has_secure_password
+
 
   def test_passage(test)
     test_passages.order(id: :desc).find_by(test_id: test.id)
