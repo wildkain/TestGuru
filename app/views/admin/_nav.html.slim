@@ -1,0 +1,5 @@
+div class="nav nav-admin"
+  span class="nav-admin title" TetsGuru Admin Panel
+  nav class="nav-admin user"
+    b Welcome, #{current_user.firstname}! #{link_to "Logout", destroy_user_session_path, method: :delete}
+

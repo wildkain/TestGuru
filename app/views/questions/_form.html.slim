@@ -1,5 +1,8 @@
 = render 'shared/errors', resource: @question
 = form_with model: [@test, @question], local: true do |form|
   = form.label :body, "Body"
-  = form.text_field :body, id: "question-body"
+
+  = form.text_area :body, id: "question-body"
+  br
   = form.submit
+  br

@@ -1,5 +1,5 @@
 = render 'shared/errors', resource: @test
-= form_with model: @test, local: true  do |form|
+= form_with model: [:admin, @test], local: true  do |form|
   p
     = form.label :title, "Test title:"
     = form.text_field :title, id: :test_title

@@ -4,12 +4,13 @@ div id="new_div"
   p Level: #{@test.level}
   p Questions: #{@test.questions.count}
 
-  = render @questions
+  ol
+    = render partial: "questions/question", collection: @test.questions
 
 hr
 
-  = link_to "Edit test", edit_test_path(@test)
+  = link_to "Edit test", edit_admin_test_path(@test)
   p
-  = link_to "Back", tests_path
+  = link_to "Back", admin_tests_path
   p
   = link_to "Add question", new_test_question_path(@test)
