@@ -14,9 +14,11 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def create
+
     @test = Test.create(test_params)
+
     if @test.save
-      redirect_to @test
+      redirect_to [:admin, @test]
     else
       render :new
     end
@@ -28,7 +30,7 @@ class Admin::TestsController < Admin::BaseController
 
   def update
     if @test.update(test_params)
-      redirect_to @test
+      redirect_to [:admin, @test]
     else
       render :edit
     end

@@ -10,6 +10,6 @@
     = form.label :category_id, "Category:"
     = form.collection_select :category_id, Category.all, :id, :title, prompt: true
 
-    = form.hidden_field :author_id, :value => 1
+    = form.hidden_field :author_id, :value => current_user.id
   br
     = form.submit "Create!"

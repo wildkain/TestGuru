@@ -5,7 +5,7 @@ div id="new_div"
   p Questions: #{@test.questions.count}
 
   ol
-    = render partial: "questions/question", collection: @test.questions
+    = render partial: "admin/questions/question", collection: @test.questions
 
 hr
 
@@ -13,4 +13,4 @@ hr
   p
   = link_to "Back", admin_tests_path
   p
-  = link_to "Add question", new_test_question_path(@test)
+  = link_to "Add question", new_admin_test_question_path(@test)

@@ -4,8 +4,13 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :name %><br/>
-    <%= f.text_field :name, autofocus: true, autocomplete: "Name" %>
+    <%= f.label :firstname %><br/>
+    <%= f.text_field :firstname, autofocus: true, autocomplete: "FirstName" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :lastname %><br/>
+    <%= f.text_field :lastname, autofocus: true, autocomplete: "LastName" %>
   </div>
 
   <div class="field">

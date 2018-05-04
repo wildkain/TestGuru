@@ -1,6 +1,6 @@
-h1 = @question.id
+h1 = @answer.question.body
 
-= form_with model: [@question, @answer], local: true  do |f|
+= form_with model: [:admin, @question, @answer], local: true  do |f|
   = render 'shared/errors', resource: @answer
 
 
