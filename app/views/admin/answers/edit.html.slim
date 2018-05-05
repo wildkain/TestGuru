@@ -1,0 +1,11 @@
+h1 Editing answer
+
+
+= @answer.question.body
+br
+== render 'form'
+
+=> link_to 'Show', admin_answer_path(@answer)
+'|
+=< link_to 'Back', admin_question_path(@answer.question)
+

@@ -1,12 +1,12 @@
 nav class="nav menu"
   = link_to "Home", root_path
   | |
-  - if logged_in?
+  - if user_signed_in?
     = link_to "Tests", tests_path
     | |
-    = link_to "LogOut!", logout_path
+    = link_to "LogOut!", destroy_user_session_path, method: :delete
   - else
     = link_to "Login"
 
--if logged_in?
-  p class="nav user" Welcome, #{current_user.name}!
+-if user_signed_in?
+  p class="nav user" Welcome, #{current_user.firstname}!

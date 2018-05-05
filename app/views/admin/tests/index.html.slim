@@ -1,0 +1,15 @@
+
+- if @tests.present?
+  h1 Avaible tests
+  table
+    tr
+      th Title
+      th Level
+      th Questions
+      th colspan=4 Actions
+    = render @tests
+
+- else
+  p No one
+hr
+= link_to "Add new test", new_admin_test_path
