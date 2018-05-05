@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   before_action :store_user_location!, if: :storable_location?
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  def after_sign_in_path_for(resource)
+  def after_sign_in_path_for(_resource)
     if current_user.is_a?(Admin)
       admin_tests_path
     else
