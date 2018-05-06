@@ -9,8 +9,8 @@ div id="new_div"
 
 hr
 
-  = link_to "Edit test", edit_admin_test_path(@test)
+  = link_to t('links.edit'), edit_admin_test_path(@test)
   p
-  = link_to "Back", admin_tests_path
+  = link_to t('links.back'), admin_tests_path
   p
-  = link_to "Add question", new_admin_test_question_path(@test)
+  = link_to t('links.new_question'), new_admin_test_question_path(@test)

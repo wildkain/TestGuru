@@ -1,17 +1,17 @@
-h1 The "#{@test_passage.test.title}" Test was Completed!
+h1  #{t('.header', title: @test_passage.test.title)}
 br
 br
-h2 Info:
-li All questions in the test: #{@test_passage.number_of_questions}
-li Correct answered questions: #{@test_passage.correct_questions}
+h2 #{t('.info')}
+li #{t('.all_q')}: #{@test_passage.number_of_questions}
+li #{t('.correct')}: #{@test_passage.correct_questions}
 
 - if @test_passage.success?
   div class="success"
-    li Success rate: #{@test_passage.count_percent} %
+    li #{t('.rate')}: #{@test_passage.count_percent} %
     b SUCCESS!
 - else
   div class="bad_result"
-    li Success rate: #{@test_passage.count_percent} %
+    li #{t('.rate')}: : #{@test_passage.count_percent} %
     b FAILED!
 
 br

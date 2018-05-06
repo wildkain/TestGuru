@@ -1,0 +1,76 @@
+ru:
+  hello: "Пивет мир"
+
+  links:
+    back: "Назад"
+    show: "Показать"
+    edit: "Изменить"
+    delete: "Удалить"
+    confirm: "Вы уверены?"
+    new_question: "Добавить вопрос"
+
+  helpers:
+    select:
+      prompt: "Выберите из списка:"
+    submit:
+      test:
+        create: "Создать тест"
+        update: "Обновить тест"
+      user:
+        create: "Войти"
+        remember_me: "Запомнить меня"
+      test_passage:
+        update: "Слудующий"
+    label:
+      test:
+        title: "Название:"
+        level: "Уровень сложности:"
+        category_id: "Категория:"
+
+  tests:
+    index:
+      header: "Доступные тесты"
+      t_title: "Название"
+      t_level: "Уровень сложности"
+      t_questions: "Количество вопросов"
+      t_actions: "Действия"
+    test:
+      t_start: "Начать тест"
+
+  admin:
+    tests:
+      new:
+        header: "Создать новый тест"
+      create:
+        success: "Тест был успешно создан"
+      index:
+        header: "Доступные тесты"
+        t_title: "Название"
+        t_level: "Уровень сложности"
+        t_questions: "Количество вопросов"
+        t_actions: "Действия"
+
+  test_passages:
+    result:
+      header: "Тест %{title} успешно завершен"
+      info: "Инфо"
+      all_q: "Всего вопросов в тесте"
+      correct: "Правильных ответов"
+      rate: "Успешность"
+    show:
+      header: "Прохождение теста %{title}"
+      counter: "Текущий вопрос"
+
+
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружено %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"
+
+
+  tests_mailer:
+    completed_test:
+      subject: "Вы успешно завершили тест на TestGuru"

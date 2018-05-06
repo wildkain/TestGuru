@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   before_action :store_user_location!, if: :storable_location?
   before_action :configure_permitted_parameters, if: :devise_controller?
-
+  before_action :set_locale
   def after_sign_in_path_for(_resource)
     if current_user.is_a?(Admin)
       admin_tests_path
@@ -12,7 +12,15 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def default_url_options
+    { lang: (I18n.locale unless I18n.locale == I18n.default_locale) }
+  end
+
   protected
+
+  def set_locale
+    I18n.locale = I18n.locale_available?(params[:lang]) ? params[:lang] :  I18n.default_locale
+  end
 
   def storable_location?
     request.get? && is_navigational_format? && !devise_controller? && !request.xhr?

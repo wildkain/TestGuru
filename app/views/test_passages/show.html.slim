@@ -1,9 +1,9 @@
-h1 Passing the "#{@test_passage.test.title}" test
+h1 = t('.header', title: @test_passage.test.title)
 
 b
 
 div class="info"
-  li Question number: #{@test_passage.current_question_number} \ #{@test_passage.number_of_questions}
+  li #{t('.counter')} : #{@test_passage.current_question_number} \ #{@test_passage.number_of_questions}
 
 b
   = @test_passage.current_question.body
@@ -17,4 +17,4 @@ b
       = b.label
 
   p
-    = form.submit 'Next'
+    = form.submit
