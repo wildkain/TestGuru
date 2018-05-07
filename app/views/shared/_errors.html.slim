@@ -1,4 +1,4 @@
 -if resource.errors.present?
   h2 = t('.header', count: resource.errors.count)
   - resource.errors.full_messages.each do |message|
-    li = message
+    div class="alert alert-danger" = message

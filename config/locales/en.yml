@@ -31,6 +31,14 @@
 
 en:
   hello: "Hello world"
+  links:
+      back: "Back"
+      show: "Show"
+      edit: "Edit"
+      delete: "DELETE"
+      confirm: "Are you sure"
+      new_question: "Add new question"
+      new_test: "Add new test"
 
   admin:
     tests:

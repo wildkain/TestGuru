@@ -8,6 +8,7 @@ ru:
     delete: "Удалить"
     confirm: "Вы уверены?"
     new_question: "Добавить вопрос"
+    new_test: "Добавить новый тест"
 
   helpers:
     select:
