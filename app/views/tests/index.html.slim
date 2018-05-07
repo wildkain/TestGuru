@@ -1,12 +1,12 @@
 
 - if @tests.present?
-  h1 Avaible tests
+  h1 = t('tests.index.header')
   table
     tr
-      th Title
-      th Level
-      th Questions
-      th Actions
+      th #{t('.t_title')}
+      th #{t('.t_level')}
+      th #{t('.t_questions')}
+      th #{t('.t_actions')}
     = render @tests
 
 - else
