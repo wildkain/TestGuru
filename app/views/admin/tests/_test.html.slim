@@ -4,9 +4,9 @@ tr
   td = test_level(test)
   td = test.questions.count
   td
-    = link_to "Edit", edit_admin_test_path(test)
+    = link_to t('links.edit'), edit_admin_test_path(test), class: "btn btn-primary"
   td
-    = link_to "Show", admin_test_path(test)
+    = link_to t('links.show'), admin_test_path(test), class: "btn btn-primary"
   td
-    = link_to "Delete", admin_test_path(test), method: :delete, data: {confirm: "Are you sure?"}
+    = link_to t('links.delete'), admin_test_path(test), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger"
   td

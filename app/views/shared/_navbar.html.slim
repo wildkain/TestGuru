@@ -1,12 +1,23 @@
-nav class="nav menu"
-  = link_to "Home", root_path
-  | |
-  - if user_signed_in?
-    = link_to "Tests", tests_path
-    | |
-    = link_to "LogOut!", destroy_user_session_path, method: :delete
-  - else
-    = link_to "Login"
+nav class="navbar navbar-light bg-light"
 
--if user_signed_in?
-  p class="nav user" Welcome, #{current_user.firstname}!
+  = link_to "TestGuru", root_path, class: 'navbar-brand'
+
+  span class="navbar-text"
+    - if user_signed_in? && current_user.admin?
+      = link_to "Panel", admin_tests_path, class: 'navbar-brand'
+    - if user_signed_in?
+
+      = link_to "Tests", tests_path
+      | |
+      = link_to "LogOut!", destroy_user_session_path, method: :delete
+      | |
+
+    - else
+      = link_to "Login"
+
+div class="row justify-content-end"
+
+  - if user_signed_in?
+    b Welcome, #{current_user.firstname}
+
+

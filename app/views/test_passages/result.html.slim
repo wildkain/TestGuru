@@ -1,21 +1,23 @@
-h1  #{t('.header', title: @test_passage.test.title)}
-br
-br
-h2 #{t('.info')}
-li #{t('.all_q')}: #{@test_passage.number_of_questions}
-li #{t('.correct')}: #{@test_passage.correct_questions}
+div class="row justify-content-center mt-3"
+  div class="col col-md-4"
+    h1  #{t('.header', title: @test_passage.test.title)}
 
-- if @test_passage.success?
-  div class="success"
-    li #{t('.rate')}: #{@test_passage.count_percent} %
-    b SUCCESS!
-- else
-  div class="bad_result"
-    li #{t('.rate')}: : #{@test_passage.count_percent} %
-    b FAILED!
+    div class="card border-primary"
+      div class="card-body"
+        h2 #{t('.info')}
+        li #{t('.all_q')}: #{@test_passage.number_of_questions}
+        li #{t('.correct')}: #{@test_passage.correct_questions}
 
-br
-br
+        - if @test_passage.success?
+          div class="success"
+            li #{t('.rate')}: #{@test_passage.count_percent} %
+          b SUCCESS!
+        - else
+          div class="bad_result"
+            li #{t('.rate')}: : #{@test_passage.count_percent} %
+          b FAILED!
+
+
 
 div class = "nav"
   = link_to 'Back to Tests', tests_path

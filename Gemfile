@@ -32,9 +32,12 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-  gem 'slim-rails'
+gem 'slim-rails'
 
 gem 'devise', '~> 4'
+# UI
+gem 'jquery-rails'
+gem 'bootstrap', '~> 4.1.1'
 
 #LOCALIZATION
 gem 'rails-i18n'
