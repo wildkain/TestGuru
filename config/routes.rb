@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   # GET test_passages/101/result
   resources :test_passages, only: %i[show update] do
     get :result, on: :member
+    post :gist, on: :member
   end
 
 

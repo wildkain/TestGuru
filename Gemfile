@@ -34,10 +34,15 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 gem 'slim-rails'
 
+# AUTH
 gem 'devise', '~> 4'
+
 # UI
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.1.1'
+
+#NETWORKING
+gem 'faraday'
 
 #LOCALIZATION
 gem 'rails-i18n'

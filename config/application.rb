@@ -17,5 +17,6 @@ module TestGuru
     # -- all .rb files in that directory are automatically loaded.
     #
     config.i18n.default_locale = :ru
+    config.autoload_paths << "#{Rails.root}/lib/clients"
   end
 end

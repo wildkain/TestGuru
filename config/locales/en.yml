@@ -39,6 +39,7 @@ en:
       confirm: "Are you sure"
       new_question: "Add new question"
       new_test: "Add new test"
+      create_gist: "Create Gist for Question"
 
   admin:
     tests:
@@ -89,6 +90,9 @@ en:
     show:
       header: "Passing the %{title} test"
       counter: "Current question"
+    gist:
+      success: "Gist was successfully saved!"
+      failure: "Failed saved gist"
 
   shared:
     errors:

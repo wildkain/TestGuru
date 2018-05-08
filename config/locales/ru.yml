@@ -9,6 +9,7 @@ ru:
     confirm: "Вы уверены?"
     new_question: "Добавить вопрос"
     new_test: "Добавить новый тест"
+    create_gist: "Создать Gist по Вопросу"
 
   helpers:
     select:
@@ -61,6 +62,9 @@ ru:
     show:
       header: "Прохождение теста %{title}"
       counter: "Текущий вопрос"
+    gist:
+      success: "Gist успешно сохранен!"
+      failure: "Во время сохранения gist произошла ошибка"
 
 
   shared:

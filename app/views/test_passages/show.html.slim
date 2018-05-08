@@ -1,6 +1,6 @@
-h1 = t('.header', title: @test_passage.test.title)
+p
+  h2 = t('.header', title: @test_passage.test.title)
 
-b
 
 div class="info"
   li #{t('.counter')} : #{@test_passage.current_question_number} \ #{@test_passage.number_of_questions}
@@ -15,6 +15,7 @@ b
     p
       = b.check_box id: "answer_ids_#{b.object.id}"
       = b.label
-
+  p
+    = link_to t('links.create_gist'), gist_test_passage_path(@test_passage), method: :post
   p
     = form.submit
