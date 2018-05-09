@@ -5,6 +5,7 @@ nav class="navbar navbar-light bg-light"
   span class="navbar-text"
     - if current_user.admin?
       = link_to "Panel", admin_tests_path, class: 'navbar-brand'
+      = link_to "Gists", admin_gists_path
     - if user_signed_in?
 
       = link_to "Tests", tests_path

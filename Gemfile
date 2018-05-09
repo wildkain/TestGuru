@@ -44,6 +44,9 @@ gem 'bootstrap', '~> 4.1.1'
 #NETWORKING
 gem 'faraday'
 
+#Github client
+gem "octokit", "~> 4.0"
+
 #LOCALIZATION
 gem 'rails-i18n'
 
@@ -53,6 +56,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'dotenv-rails', github: "bkeepers/dotenv"
 end
 
 group :development do

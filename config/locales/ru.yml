@@ -63,7 +63,7 @@ ru:
       header: "Прохождение теста %{title}"
       counter: "Текущий вопрос"
     gist:
-      success: "Gist успешно сохранен!"
+      success: " %{gist_url} успешно сохранен!"
       failure: "Во время сохранения gist произошла ошибка"
 
 
