@@ -18,19 +18,18 @@ class TestPassagesController < ApplicationController
 
   def gist
     result = GistQuestionService.new(@test_passage.current_question).call
-    flash_options = if result.created_at
-                      gist = current_user.gists.build(question_id: @test_passage.current_question_id, path: result.html_url)
-                      gist.save
-                      { notice: t('.success', gist_url: view_context.link_to('Gist', result.html_url, :target => '_blank'))}
-                    else
-                      { alert: t('.failure')  }
-                    end
+    if successed?(result)
+      current_user.gists.create(question_id: @test_passage.current_question_id, path: result.html_url)
+      flash[:notice] =  t('.success', gist_url: view_context.link_to('Gist', result.html_url, :target => '_blank'))
+    else
+      flash[:alert] = t('.failure')
+    end
 
-    redirect_to @test_passage, flash_options
+    redirect_to @test_passage
   end
 
-  def create_link(result)
-    link_to 'View GIST on Github', result.github_pull_url
+  def successed?(result)
+    result.created_at.present?
   end
 
   private

@@ -1,23 +1,24 @@
-nav class="navbar navbar-light bg-light"
 
-  = link_to "TestGuru", root_path, class: 'navbar-brand'
+nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  => link_to 'Test Guru', root_path, class: 'navbar-brand'
+  button.navbar-toggler type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"
+    span.navbar-toggler-icon
 
-  span class="navbar-text"
-    - if user_signed_in? && current_user.admin?
-      = link_to "Panel", admin_tests_path, class: 'navbar-brand'
-    - if user_signed_in?
-
-      = link_to "Tests", tests_path
-      | |
-      = link_to "LogOut!", destroy_user_session_path, method: :delete
-      | |
-
-    - else
-      = link_to "Login"
-
-div class="row justify-content-end"
-
+  .collapse.navbar-collapse#navbarText
+    ul.navbar-nav.mr-auto
+      - if user_signed_in?
+        - if current_user.admin?
+          li.nav-item
+            =< link_to t('links.navbar.panel'), admin_tests_path, class: 'nav-link'
+        li.nav-item
+          =< link_to t('links.navbar.logout'), destroy_user_session_path, method: :delete, class: 'nav-link'
+      - else
+        li.nav-item
+          => link_to t('links.navbar.login'), new_user_session_path, class: 'nav-link'
+        li.nav-item
+          =< link_to t('links.navbar.signup'), new_user_registration_path, class: 'nav-link'
   - if user_signed_in?
-    b Welcome, #{current_user.firstname}
-
+    span.navbar-text
+      ' Добро пожаловать,
+      b => current_user.email
 

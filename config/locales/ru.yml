@@ -10,6 +10,13 @@ ru:
     new_question: "Добавить вопрос"
     new_test: "Добавить новый тест"
     create_gist: "Создать Gist по Вопросу"
+    navbar:
+      panel: "Панель администратора"
+      tests: "Тесты"
+      gists: "Gists"
+      login: "Войти"
+      signup: "Регистрация"
+      logout: "Выйти"
 
   helpers:
     select:
@@ -51,6 +58,12 @@ ru:
         t_level: "Уровень сложности"
         t_questions: "Количество вопросов"
         t_actions: "Действия"
+      show:
+        header: "Детали теста"
+        counter: "Вопросов в тесте: %{count}"
+        level: "Уровень сложности: %{level}"
+        title: "Наименование %{title}"
+
 
   test_passages:
     result:

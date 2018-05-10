@@ -1,8 +1,8 @@
-h2 Test details
-h3 Title: #{@test.title}
+h2 = t('admin.tests.show.header')
+h3 = t('admin.tests.show.title', title: @test.title)
 div id="new_div"
-  p Level: #{@test.level}
-  p Questions: #{@test.questions.count}
+  p = t('admin.tests.show.level', level: @test.level)
+  p = t('admin.tests.show.counter', count: @test.questions.count)
 
   ol
     = render partial: "admin/questions/question", collection: @test.questions

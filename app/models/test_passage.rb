@@ -5,7 +5,6 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_set_questions
 
-
   def completed?
     current_question.nil?
   end
@@ -16,7 +15,7 @@ class TestPassage < ApplicationRecord
   end
 
   def success?
-    self.count_percent > 85
+    count_percent > 85
   end
 
   def count_percent
@@ -53,7 +52,7 @@ class TestPassage < ApplicationRecord
     current_question.answers.correct
   end
 
-  def  collect_questions
+  def collect_questions
     test.questions.order(:id).where('id > ?', current_question.id)
   end
 end
