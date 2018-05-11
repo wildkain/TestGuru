@@ -1,6 +1,10 @@
 ru:
   hello: "Пивет мир"
 
+  services:
+    gists:
+      title: "A question about %{title} from TestGuru"
+
   links:
     back: "Назад"
     show: "Показать"

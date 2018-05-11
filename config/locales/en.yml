@@ -31,6 +31,10 @@
 
 en:
 
+  services:
+    gists:
+      title: "Вопросы по тесту  %{title} from TestGuru"
+
   links:
       back: "Back"
       show: "Show"
