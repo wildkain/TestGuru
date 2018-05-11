@@ -1,0 +1,15 @@
+div class="row"
+  div class="col"
+    - if @gists.present?
+      h1 Created Gists
+      table class="table table-hover"
+        tr
+          th Question
+          th URL
+          th User
+        = render @gists
+
+    - else
+      p No one
+    hr
+    = link_to 'Back', admin_tests_path, class: 'btn btn-primary'

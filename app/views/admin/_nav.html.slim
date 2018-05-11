@@ -1,21 +1,22 @@
-nav class="navbar navbar-light bg-light"
 
-  = link_to "TestGuru", root_path, class: 'navbar-brand'
+=> link_to 'English', url_for(lang: :en), class: 'btn'
+||
+=< link_to 'Русский', url_for(lang: :ru), class: 'btn'
+nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
+  => link_to 'Test Guru', root_path, class: 'navbar-brand'
+  button.navbar-toggler type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"
+    span.navbar-toggler-icon
 
-  span class="navbar-text"
-    - if current_user.admin?
-      = link_to "Panel", admin_tests_path, class: 'navbar-brand'
-    - if user_signed_in?
-
-      = link_to "Tests", tests_path
-      | |
-      = link_to "LogOut!", destroy_user_session_path, method: :delete
-      | |
-
-    - else
-      = link_to "Login"
-
-div class="row justify-content-end"
-
-  - if user_signed_in?
-    b Welcome, #{current_user.firstname}
+  .collapse.navbar-collapse
+    ul.navbar-nav.mr-auto
+      li.nav-item.active
+        =< link_to t('links.navbar.panel'), admin_tests_path, class: 'nav-link'
+      li.nav-item.active
+        =<> link_to t('links.navbar.gists'), admin_gists_path, class: 'nav-link'
+      li.nav-item.active
+        =<> link_to t('links.navbar.tests'), tests_path, class: 'nav-link'
+      li.nav-item.active
+        =<> link_to t('links.navbar.logout'), destroy_user_session_path, method: :delete, class: 'nav-link'
+  span.navbar-text
+    ' Добро пожаловать,
+    b.nav-admin.user-email => current_user.email

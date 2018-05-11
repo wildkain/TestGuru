@@ -1,0 +1,4 @@
+tr
+  td =  link_to truncate(gist.question.body, length: 25), admin_question_path(gist.question)
+  td = link_to 'View on Gists.github', gist.path, target:'_blank', class: 'btn btn-primary'
+  td = gist.user.firstname

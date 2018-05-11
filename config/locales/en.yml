@@ -30,7 +30,11 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+
+  services:
+    gists:
+      title: "Вопросы по тесту  %{title} from TestGuru"
+
   links:
       back: "Back"
       show: "Show"
@@ -39,7 +43,7 @@ en:
       confirm: "Are you sure"
       new_question: "Add new question"
       new_test: "Add new test"
-
+      create_gist: "Create Gist for Question"
   admin:
     tests:
       new:
@@ -63,6 +67,11 @@ en:
       t_actions: "Actions"
     test:
       t_start: "Start the Test"
+    show:
+      header: "Details"
+      counter: "Questions: %{count}"
+      level: "Difficulty: %{level}"
+      title: "Title: %{title}"
 
 
 
@@ -89,6 +98,9 @@ en:
     show:
       header: "Passing the %{title} test"
       counter: "Current question"
+    gist:
+      success: "Gist was successfully saved!"
+      failure: "Failed saved gist"
 
   shared:
     errors:
