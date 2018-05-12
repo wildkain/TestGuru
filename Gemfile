@@ -40,6 +40,7 @@ gem 'devise', '~> 4'
 # UI
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.1.1'
+gem 'octicons_helper'
 
 #NETWORKING
 gem 'faraday'
