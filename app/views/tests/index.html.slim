@@ -2,9 +2,12 @@ div class="row"
   div class="col"
     - if @tests.present?
       h1 = t('tests.index.header')
-      table class="table"
+      table class="table table-hover"
         tr
-          th #{t('.t_title')}
+          th class="sort-by-title pointer"
+            = t('.t_title')
+            = octicon 'arrow-up', class: 'text-success hide'
+            = octicon 'arrow-down', class: 'text-success hide'
           th #{t('.t_level')}
           th #{t('.t_questions')}
           th #{t('.t_actions')}
