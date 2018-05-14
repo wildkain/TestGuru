@@ -67,6 +67,8 @@ ru:
         counter: "Вопросов в тесте: %{count}"
         level: "Уровень сложности: %{level}"
         title: "Наименование %{title}"
+      form_inline:
+        submit: "OK"
 
 
   test_passages:

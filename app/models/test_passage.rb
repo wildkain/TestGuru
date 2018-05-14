@@ -15,10 +15,10 @@ class TestPassage < ApplicationRecord
   end
 
   def success?
-    count_percent > 85
+    count_percent_correct > 85
   end
 
-  def count_percent
+  def count_percent_correct
     (correct_questions * 100) / number_of_questions
   end
 

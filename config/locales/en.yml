@@ -72,6 +72,8 @@ en:
       counter: "Questions: %{count}"
       level: "Difficulty: %{level}"
       title: "Title: %{title}"
+    form_inline:
+      submit: "OK"
 
 
 
