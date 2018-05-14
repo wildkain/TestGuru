@@ -1,27 +1,23 @@
 class Admin::AnswersController < Admin::BaseController
-
-  before_action :set_answer, only: [:show, :edit, :update, :destroy]
+  before_action :set_answer, only: %i[show edit update destroy]
   before_action :set_question, only: %i[new create]
 
-  def show
-  end
+  def show; end
 
   def new
     @answer = @question.answers.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @answer = @question.answers.new(answer_params)
     if @answer.save
-      redirect_to @answer, notice: 'Answer successfully created'
+      redirect_to admin_answer_path(@answer), notice: 'Answer successfully created'
     else
       render :new
     end
   end
-
 
   def update
     if @answer.update(answer_params)
@@ -31,26 +27,24 @@ class Admin::AnswersController < Admin::BaseController
     end
   end
 
-
-
   def destroy
     @answer.destroy
-    redirect_to @answer.question
+    redirect_to admin_question_path(@answer.question)
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_answer
-      @answer = Answer.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def answer_params
-      params.require(:answer).permit(:body, :correct, :question_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_answer
+    @answer = Answer.find(params[:id])
+  end
 
-    def set_question
-      @question = Question.find(params[:question_id])
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def answer_params
+    params.require(:answer).permit(:body, :correct, :question_id)
+  end
 
+  def set_question
+    @question = Question.find(params[:question_id])
+  end
 end
