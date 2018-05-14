@@ -23,18 +23,16 @@ function formInlineLinkHandler(event) {
 function formInlineHandler(testId) {
     var $testTitle = $('.test-title[data-test-id="' + testId + '"]')
     var $formInline = $('.form-inline[data-test-id="'+ testId + '"]')
-    var link = document.querySelector('.form-inline-link[data-test-id="' + testId + '"]')
+    var $link = $('.form-inline-link[data-test-id="' + testId + '"]')
 
 
     $formInline.toggle()
     $testTitle.toggle()
 
-    if ($formInline.is(':visible') && link.value != 0){
-
-      link.textContent = 'Cancel'
+    if ($formInline.is(':visible')){
+      $link.text('Cancel')
     } else {
-
-        link.textContent = 'Edit'
+      $link.text('Edit')
     }
 
 }
