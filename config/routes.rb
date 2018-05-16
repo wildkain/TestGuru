@@ -4,6 +4,9 @@ Rails.application.routes.draw do
              controllers: {sessions: 'users/sessions'}
   get 'sessions/new'
 
+  get 'pages/contact', to: "pages#contact", as: :contact
+  post 'pages/contact', to: "pages#send_mail", as: :contact_us
+
   root to: 'tests#index'
 
   resources :tests, only: :index do
@@ -20,6 +23,7 @@ Rails.application.routes.draw do
 
 
   namespace :admin do
+    resources :feedbacks, only: :index
     resources :gists, only: :index
     resources :tests do
       patch :update_inline, on: :member

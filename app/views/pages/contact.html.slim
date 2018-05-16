@@ -1,0 +1,15 @@
+div class="row justify-content-center"
+  div class="col col-md-4"
+    h3 class="text-center mt-3"
+      = t('.header')
+
+    = form_with url: contact_us_path do |form|
+      = form.label :message, class: 'form-label'
+      = form.text_area :message, class: 'form-control'
+      - if !user_signed_in?
+        = form.label :email
+        = form.text_field :email, class: 'form-control'
+      br
+      = form.submit t('.contact-btn'), class: 'btn btn-primary'
+
+  div class="col col-md-4"

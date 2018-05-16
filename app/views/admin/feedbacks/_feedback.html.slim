@@ -1,0 +1,5 @@
+tr
+  td = feedback.body
+  td = feedback_author_name(feedback)
+  td = feedback.email
+  td alt="#{feedback.created_at}"  = distance_of_time_in_words( Time.now, feedback.created_at )

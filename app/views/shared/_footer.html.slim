@@ -1,12 +1,11 @@
-footer class="footer"
-  div class="container"
-
-    p class="text-xs-center"
-      | Copyright &copy; #{current_year} #{ApplicationHelper::AUTHOR}
+div class="container-fluid text-center"
+  footer class="footer page-footer pt-4 mt-4"
     p
       = github_url("TEST GURU", "https://github.com/wildkain/TestGuru")
     p
-      = link_to "Учебный проект в онлайн-школе Thinknetica", 'http://thinknetica.com/', target: :_blank
+      = link_to t('links.footer-thinknetica'), 'http://thinknetica.com/', target: :_blank
+    p
+      | Copyright &copy; #{current_year} #{ApplicationHelper::AUTHOR}
 
 
 

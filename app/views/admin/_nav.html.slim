@@ -2,6 +2,9 @@
 => link_to 'English', url_for(lang: :en), class: 'btn'
 ||
 =< link_to 'Русский', url_for(lang: :ru), class: 'btn'
+
+div class="text-md-right"
+  = link_to t('links.navbar.contact'), contact_path, class: 'btn btn-success'
 nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
   => link_to 'Test Guru', root_path, class: 'navbar-brand'
   button.navbar-toggler type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"
@@ -16,7 +19,9 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
       li.nav-item.active
         =<> link_to t('links.navbar.tests'), tests_path, class: 'nav-link'
       li.nav-item.active
+        =<> link_to t('links.navbar.feedbacks'), admin_feedbacks_path, class: 'nav-link'
+      li.nav-item.active
         =<> link_to t('links.navbar.logout'), destroy_user_session_path, method: :delete, class: 'nav-link'
   span.navbar-text
     ' Добро пожаловать,
-    b.nav-admin.user-email => current_user.email
+    b.nav-admin.user-email => current_user.firstname

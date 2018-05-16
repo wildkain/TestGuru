@@ -21,7 +21,7 @@ class Admin::AnswersController < Admin::BaseController
 
   def update
     if @answer.update(answer_params)
-      redirect_to @answer, notice: 'Answer was successfully updated.'
+      redirect_to admin_answer_path(@answer), notice: 'Answer was successfully updated.'
     else
       render :edit
     end
