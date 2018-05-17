@@ -1,9 +1,5 @@
-=> link_to 'English', url_for(lang: :en), class: 'btn'
-||
-=< link_to 'Русский', url_for(lang: :ru), class: 'btn'
-
 div class="text-md-right"
-  = link_to t('links.navbar.contact'), new_feedback_path, class: 'btn btn-success'
+
 nav.navbar.navbar-expand-lg.navbar-light.bg-light
   => link_to 'Test Guru', root_path, class: 'navbar-brand'
   button.navbar-toggler type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"
@@ -22,8 +18,18 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
           => link_to t('links.navbar.login'), new_user_session_path, class: 'nav-link'
         li.nav-item
           =< link_to t('links.navbar.signup'), new_user_registration_path, class: 'nav-link'
-  - if user_signed_in?
-    span.navbar-text
-      ' Добро пожаловать,
-      b => current_user.firstname
+      li.nav-item
+        = link_to t('links.navbar.contact'), new_feedback_path, class: 'btn'
+        = octicon "comment"
+    ul.navbar-nav
+      li.nav-item
+        => link_to 'English', url_for(lang: :en), class: 'btn'
+      li.nav-item
+        =< link_to 'Русский', url_for(lang: :ru), class: 'btn'
+div class="row"
+  div class="col"
+    div class="greeting"
+      - if user_signed_in?
+        ' Добро пожаловать,
+        b => current_user.firstname
 

@@ -1,10 +1,3 @@
-
-=> link_to 'English', url_for(lang: :en), class: 'btn'
-||
-=< link_to 'Русский', url_for(lang: :ru), class: 'btn'
-
-div class="text-md-right"
-  = link_to t('links.navbar.contact'), new_feedback_path, class: 'btn btn-success'
 nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
   => link_to 'Test Guru', root_path, class: 'navbar-brand'
   button.navbar-toggler type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"
@@ -22,6 +15,16 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
         =<> link_to t('links.navbar.feedbacks'), admin_feedbacks_path, class: 'nav-link'
       li.nav-item.active
         =<> link_to t('links.navbar.logout'), destroy_user_session_path, method: :delete, class: 'nav-link'
-  span.navbar-text
-    ' Добро пожаловать,
-    b.nav-admin.user-email => current_user.firstname
+      li.nav-item.active
+        = link_to t('links.navbar.contact'), new_feedback_path, class: 'nav-link'
+    ul.navbar-nav
+      li.nav-item
+        => link_to 'English', url_for(lang: :en), class: 'btn nav-link'
+      li.nav-item
+        =< link_to 'Русский', url_for(lang: :ru), class: 'btn nav-link'
+div class="row"
+  div class="col"
+    div class="greeting"
+      - if user_signed_in?
+        ' Добро пожаловать,
+        b => current_user.firstname
