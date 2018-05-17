@@ -1,27 +1,12 @@
 Rails.application.routes.draw do
+  root to: 'tests#index'
 
+  # Main resources
   devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout},
              controllers: {sessions: 'users/sessions'}
   get 'sessions/new'
 
-  get 'pages/contact', to: "pages#contact", as: :contact
-  post 'pages/contact', to: "pages#send_mail", as: :contact_us
-
-  root to: 'tests#index'
-
-  resources :tests, only: :index do
-    member do
-      post :start
-    end
-  end
-
-  # GET test_passages/101/result
-  resources :test_passages, only: %i[show update] do
-    get :result, on: :member
-    post :gist, on: :member
-  end
-
-
+  # Admin namespace
   namespace :admin do
     resources :feedbacks, only: :index
     resources :gists, only: :index
@@ -32,5 +17,21 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  #Common resources
+  resources :tests, only: :index do
+    member do
+      post :start
+    end
+  end
+
+  resources :test_passages, only: %i[show update] do
+    get :result, on: :member
+    post :gist, on: :member
+  end
+
+  resources :feedbacks, only: %i[new create]
+
+
 
 end

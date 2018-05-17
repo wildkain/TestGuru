@@ -45,8 +45,8 @@ en:
       create_gist: "Create Gist for Question"
       footer-thinknetica: "Educational project in online school Thinknetica"
 
-  pages:
-    contact:
+  feedbacks:
+    new:
       header: "Contact Us"
       contact-btn: "Send Message"
 

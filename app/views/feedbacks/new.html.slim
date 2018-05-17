@@ -1,0 +1,17 @@
+= render 'shared/errors', resource: @feedback
+div class="row justify-content-center"
+  div class="col col-md-4"
+    h3 class="text-center mt-3"
+      = t('.header')
+
+    = form_with model: @feedback, local: true do |form|
+      = form.label :body, class: 'form-label'
+      = form.text_area :body, class: 'form-control'
+
+      = form.label :email
+      = form.text_field :email, class: 'form-control',
+              :prompt_text => "#{current_user&.email}"
+      br
+      = form.submit t('.contact-btn'), class: 'btn btn-primary'
+
+  div class="col col-md-4"

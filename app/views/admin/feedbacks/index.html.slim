@@ -9,7 +9,7 @@ div class="row"
           = octicon 'arrow-down', class: 'text-success hide'
         th #{t('.t_fullname')}
         th #{t('.t_email')}
-        th #{t('.t_date_time')}
+        th  class="sort-by-title pointer" #{t('.t_date_time')}
       - if @feedbacks.present?
         = render @feedbacks
       - else

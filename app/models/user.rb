@@ -26,4 +26,9 @@ class User < ApplicationRecord
   def show_tests_with_level(level_value)
     tests.with_level(level_value)
   end
+
+  def fullname
+    firstname + ' ' + lastname
+  end
+
 end

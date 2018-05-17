@@ -43,8 +43,8 @@ ru:
         title: "Название:"
         level: "Уровень сложности:"
         category_id: "Категория:"
-  pages:
-    contact:
+  feedbacks:
+    new:
       header: "Напишите нам"
       contact-btn: "Напишите нам"
   tests:
