@@ -4,17 +4,17 @@
 
 
 
-div {
-  &.success, &.bad_result {
-    width: auto;
-    display: inline-block;
-  }
-  &.success{
-    background-color: green;
+.result-fail {
+  text-align: -webkit-center;
+}
+.result-success {
+  text-align: -webkit-center;
+}
+.badge-fail {
+  width: 200px;
+  height: 50px;
+  padding: 50px;
+  background-color: red;
+  border-radius: 5px;
 
-
-  }
-  &.bad_result{
-    background-color: red;
-  }
 }

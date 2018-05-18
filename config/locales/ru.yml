@@ -14,13 +14,17 @@ ru:
     new_question: "Добавить вопрос"
     new_test: "Добавить новый тест"
     create_gist: "Создать Gist по Вопросу"
+    footer-thinknetica: "Учебный проект в онлайн-школе Thinknetica"
     navbar:
       panel: "Панель администратора"
       tests: "Тесты"
       gists: "Gists"
       login: "Войти"
       signup: "Регистрация"
+      feedbacks: "Отзывы"
       logout: "Выйти"
+      contact: "Напишите нам письмо"
+
 
   helpers:
     select:
@@ -39,7 +43,10 @@ ru:
         title: "Название:"
         level: "Уровень сложности:"
         category_id: "Категория:"
-
+  feedbacks:
+    new:
+      header: "Напишите нам"
+      contact-btn: "Напишите нам"
   tests:
     index:
       header: "Доступные тесты"
@@ -69,6 +76,13 @@ ru:
         title: "Наименование %{title}"
       form_inline:
         submit: "OK"
+    feedbacks:
+      index:
+        header: "Обратная связь от пользователей"
+        t_body: "Сообщение"
+        t_fullname: "Полное имя"
+        t_email: "Email"
+        t_date_time: "Дата|Время"
 
 
   test_passages:

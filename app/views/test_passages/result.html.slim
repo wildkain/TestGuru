@@ -7,15 +7,18 @@ div class="row justify-content-center mt-3"
         h3 #{t('.info')}
         li #{t('.all_q')}: #{@test_passage.number_of_questions}
         li #{t('.correct')}: #{@test_passage.correct_questions}
+        li #{t('.rate')}: #{@test_passage.count_percent_correct} %
 
-        - if @test_passage.success?
-          div class="success"
-            li #{t('.rate')}: #{@test_passage.count_percent_correct} %
-          b SUCCESS!
-        - else
-          div class="bad_result"
-            li #{t('.rate')}: : #{@test_passage.count_percent_correct} %
-          b FAILED!
+div class="row justify-content-center mt-3"
+  div class="col col-md-12"
+    div class="test-result"
+      - if @test_passage.success?
+        div class="result-success"
+          = image_tag("success.png", size:"250x200")
+      - else
+        div class="result-fail"
+          = image_tag("fail.png", size:"250x200")
+
 
 
 

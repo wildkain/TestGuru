@@ -30,7 +30,6 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-
   services:
     gists:
       title: "Вопросы по тесту  %{title} from TestGuru"
@@ -44,6 +43,14 @@ en:
       new_question: "Add new question"
       new_test: "Add new test"
       create_gist: "Create Gist for Question"
+      footer-thinknetica: "Educational project in online school Thinknetica"
+
+  feedbacks:
+    new:
+      header: "Contact Us"
+      contact-btn: "Send Message"
+
+
   admin:
     tests:
       new:
@@ -56,6 +63,13 @@ en:
         t_level: "Level"
         t_questions: "Questions"
         t_actions: "Actions"
+    feedbacks:
+      index:
+        header: "Users feedbacks"
+        t_body: "Message"
+        t_fullname: "Fullname"
+        t_email: "Email"
+        t_datetime: "Date|Time"
 
 
   tests:
