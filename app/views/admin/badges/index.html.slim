@@ -1,0 +1,18 @@
+= link_to t('links.badges.new_badge'), new_admin_badge_path, class: 'btn btn-primary'
+
+div class="row"
+  div class="col mt-4"
+    h1 = t('.header')
+    table class="table table-hover"
+      tr
+        th class="sort-by-title pointer"
+          = t('.t_title')
+          = octicon 'arrow-up', class: 'text-success hide'
+          = octicon 'arrow-down', class: 'text-success hide'
+        th #{t('.t_image')}
+        th #{t('.t_decription')}
+        th #{t('.t_actions')}
+      - if @badges.present?
+        = render @badges
+      - else
+        p No one

@@ -15,6 +15,8 @@ ru:
     new_test: "Добавить новый тест"
     create_gist: "Создать Gist по Вопросу"
     footer-thinknetica: "Учебный проект в онлайн-школе Thinknetica"
+    badges:
+      new_badge: "Добавить бейдж"
     navbar:
       panel: "Панель администратора"
       tests: "Тесты"
@@ -22,6 +24,7 @@ ru:
       login: "Войти"
       signup: "Регистрация"
       feedbacks: "Отзывы"
+      badges: "Бэйджи"
       logout: "Выйти"
       contact: "Напишите нам письмо"
 
@@ -83,6 +86,17 @@ ru:
         t_fullname: "Полное имя"
         t_email: "Email"
         t_date_time: "Дата|Время"
+    badges:
+      index:
+        header: "Управление Бэйджами"
+        t_title: "Название"
+        t_image: "Изображение"
+        t_decription: "Описание"
+        t_actions: "Действия"
+      new:
+        header: "Создать новый бэйдж"
+      edit:
+        header: "Редактировать бэйдж"
 
 
   test_passages:

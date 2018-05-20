@@ -41,6 +41,7 @@ gem 'devise', '~> 4'
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.1.1'
 gem 'octicons_helper'
+gem "paperclip", "~> 5.1"
 
 #NETWORKING
 gem 'faraday'
