@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 20180520111608) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "description"
+    t.text "rule"
+    t.integer "category_id"
     t.index ["user_id"], name: "index_badges_on_user_id"
   end
 

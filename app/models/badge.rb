@@ -1,4 +1,9 @@
 class Badge < ApplicationRecord
+  RULES = { all_tests_in_category: "All test in one category",
+            on_first_try: "Pass the test on first try",
+            by_level: "Pass all tests with level"
+          }
+
   has_many :users, through: :user_badges
   has_many :user_badges
   has_attached_file :image
