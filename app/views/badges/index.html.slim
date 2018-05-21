@@ -17,8 +17,8 @@ div class="row"
                 = octicon 'arrow-down', class: 'text-success hide'
               th #{t('.t_image')}
               th #{t('.t_decription')}
-            - if @badges.present?
-              = render @badges
+            - if @user_badges.present?
+              = render @user_badges
             - else
               p No one
         div class="tab-pane" id="panel-2"
@@ -31,7 +31,7 @@ div class="row"
                 = octicon 'arrow-down', class: 'text-success hide'
               th #{t('.t_image')}
               th #{t('.t_decription')}
-            - if @user_badges.present?
-              = render @user_badges
+            - if @badges.present?
+              = render @badges
             - else
               p No one
