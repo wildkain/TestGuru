@@ -3,6 +3,7 @@ class Badge < ApplicationRecord
             on_first_try: "Pass the test on first try",
             by_level: "Pass all tests with level"
           }
+  LEVELS  = { easy: "easy", medium: "medium", hard: "hard" }
 
   has_many :users, through: :user_badges
   has_many :user_badges

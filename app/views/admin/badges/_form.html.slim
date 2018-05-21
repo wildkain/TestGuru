@@ -16,6 +16,7 @@ div class="row "
         = form.label :rule
         = form.select(:rule, Badge::RULES.invert,  {:prompt => "Select Rule"}, {:class => 'form-control'} )
         = form.collection_select(:category_id, Category.all, :id, :title, {}, {class:'form-control hide'})
+        = form.select(:level, (1..15).to_a, {}, {class:'form-control hide'})
       div class="form-group"
         = form.submit
       div class="form-group"
