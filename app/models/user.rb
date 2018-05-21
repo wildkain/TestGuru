@@ -33,4 +33,7 @@ class User < ApplicationRecord
     firstname + ' ' + lastname
   end
 
+  def completed_tests
+    test_passages.select {|tp| tp.completed? }
+  end
 end

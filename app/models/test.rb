@@ -19,4 +19,5 @@ class Test < ApplicationRecord
   def self.get_titles(category_name)
     by_category(category_name).pluck(:title)
   end
+
 end
