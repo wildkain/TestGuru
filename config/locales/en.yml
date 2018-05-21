@@ -82,7 +82,14 @@ en:
       edit:
         header: "Edit Badge"
 
-
+  badges:
+    index:
+      tab_my_badges: "My Badges"
+      tab_all_badges: "All Badges"
+      t_title: "Title"
+      t_image: "Image"
+      t_decription: "Description"
+      t_actions: "Actions"
   tests:
     index:
       header: "Available Tests"

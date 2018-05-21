@@ -22,6 +22,7 @@ ru:
       tests: "Тесты"
       gists: "Gists"
       login: "Войти"
+      badges: "Бейджи"
       signup: "Регистрация"
       feedbacks: "Отзывы"
       badges: "Бэйджи"
@@ -98,6 +99,14 @@ ru:
       edit:
         header: "Редактировать бэйдж"
 
+  badges:
+        index:
+          tab_my_badges: "Мои Бейджи"
+          tab_all_badges: "Все Бейджи"
+          t_title: "Название"
+          t_image: "Изображение"
+          t_decription: "Описание"
+          t_actions: "Действия"
 
   test_passages:
     result:

@@ -1,0 +1,37 @@
+div class="row"
+  div class="col mt-4"
+    div class="tabbable" id="tabs-714849"
+      ul class="nav nav-tabs"
+        li class="nav-item"
+          a class="nav-link active show" href="#panel-1" data-toggle="tab" = t('.tab_my_badges')
+        li class="nav-item"
+          a class="nav-link" href="#panel-2" data-toggle="tab" = t('.tab_all_badges')
+      div class="tab-content"
+        div class="tab-pane active show" id="panel-1"
+          h1 = t('.tab_my_badges')
+          table class="table table-hover"
+            tr
+              th class="sort-by-title pointer"
+                = t('.t_title')
+                = octicon 'arrow-up', class: 'text-success hide'
+                = octicon 'arrow-down', class: 'text-success hide'
+              th #{t('.t_image')}
+              th #{t('.t_decription')}
+            - if @badges.present?
+              = render @badges
+            - else
+              p No one
+        div class="tab-pane" id="panel-2"
+          h1 = t('.tab_all_badges')
+          table class="table table-hover"
+            tr
+              th class="sort-by-title pointer"
+                = t('.t_title')
+                = octicon 'arrow-up', class: 'text-success hide'
+                = octicon 'arrow-down', class: 'text-success hide'
+              th #{t('.t_image')}
+              th #{t('.t_decription')}
+            - if @user_badges.present?
+              = render @user_badges
+            - else
+              p No one

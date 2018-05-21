@@ -1,0 +1,5 @@
+tr
+  td
+    b = badge.title
+  td = image_tag(badge.image.url, size: "150x150") if badge.image.exists?
+  td = badge.description
