@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Test < ApplicationRecord
   has_many :test_passages
   has_many :users, through: :test_passages
@@ -19,5 +21,4 @@ class Test < ApplicationRecord
   def self.get_titles(category_name)
     by_category(category_name).pluck(:title)
   end
-
 end

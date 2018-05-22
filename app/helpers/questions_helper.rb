@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module QuestionsHelper
   def question_header(resource)
     if @question.new_record?

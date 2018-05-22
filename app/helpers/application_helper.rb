@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 module ApplicationHelper
-  AUTHOR = 'Stanislav Karpinsky'.freeze
+  AUTHOR = 'Stanislav Karpinsky'
   def current_year
     Time.current.year
   end
@@ -11,7 +13,6 @@ module ApplicationHelper
   def alert_body
     content_tag :p, flash[:alert], class: 'flash alert'
   end
-
 
   def flash_messages
     html = ''

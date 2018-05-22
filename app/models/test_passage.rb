@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TestPassage < ApplicationRecord
   belongs_to :user
   belongs_to :test
@@ -12,6 +14,13 @@ class TestPassage < ApplicationRecord
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
     save!
+  end
+
+  def time_left
+    start =  created_at
+    timer =  test.timer
+    end_time = start + (timer * 60)
+    end_time - Time.zone.now
   end
 
   def success?

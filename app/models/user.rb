@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   #  :lockable, :timeoutable and :omniauthable
@@ -34,6 +36,6 @@ class User < ApplicationRecord
   end
 
   def completed_tests
-    test_passages.select {|tp| tp.completed? }
+    test_passages.select(&:completed?)
   end
 end

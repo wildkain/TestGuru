@@ -1,6 +1,6 @@
+# frozen_string_literal: true
+
 class FeedbacksController < ApplicationController
-
-
   def new
     @feedback = Feedback.new(email: current_user&.email)
   end
@@ -9,7 +9,7 @@ class FeedbacksController < ApplicationController
     feedback = Feedback.new(feedback_params.merge(user: current_user))
     if feedback.save
       FeedbacksMailer.send_feedback(feedback).deliver_now
-      redirect_to root_path, notice: "Feedback successfeully sended"
+      redirect_to root_path, notice: 'Feedback successfeully sended'
     else
       render :new
     end

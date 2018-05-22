@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TestPassagesController < ApplicationController
   before_action :find_test_passage, only: %i[show result update gist]
   before_action :authenticate_user!
@@ -12,7 +14,7 @@ class TestPassagesController < ApplicationController
       TestsMailer.completed_test(@test_passage).deliver_now
       service = BadgeDistributorService.new(@test_passage)
       service&.assign_badges
-      redirect_to result_test_passage_path(@test_passage), notice: "You recieve a Badge" if service.badge_given?
+      redirect_to result_test_passage_path(@test_passage), notice: 'You recieve a Badge' if service.badge_given?
     else
       render :show
     end
@@ -22,7 +24,7 @@ class TestPassagesController < ApplicationController
     result = GistQuestionService.new(@test_passage.current_question).call
     if successed?(result)
       current_user.gists.create(question_id: @test_passage.current_question_id, path: result.html_url)
-      flash[:notice] =  t('.success', gist_url: view_context.link_to('Gist', result.html_url, :target => '_blank'))
+      flash[:notice] = t('.success', gist_url: view_context.link_to('Gist', result.html_url, target: '_blank'))
     else
       flash[:alert] = t('.failure')
     end

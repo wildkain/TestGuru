@@ -1,31 +1,29 @@
+# frozen_string_literal: true
+
 class Admin::BadgesController < Admin::BaseController
   before_action :find_badge, only: %i[edit update destroy]
 
   def new
-  @badge = Badge.new()
+    @badge = Badge.new
   end
 
   def create
     badge = Badge.new(badge_params)
     if badge.save
-      redirect_to admin_badges_path, notice: "Badge successfully saved!"
+      redirect_to admin_badges_path, notice: 'Badge successfully saved!'
     else
       render :new
     end
   end
 
-
-  def edit
-
-  end
+  def edit; end
 
   def update
     if @badge.update(badge_params)
-      redirect_to admin_badges_path, notice: "Successfully updated!"
+      redirect_to admin_badges_path, notice: 'Successfully updated!'
     else
       render :edit
     end
-
   end
 
   def destroy
@@ -34,9 +32,8 @@ class Admin::BadgesController < Admin::BaseController
   end
 
   def index
-  @badges = Badge.all
+    @badges = Badge.all
   end
-
 
   private
 
@@ -44,9 +41,7 @@ class Admin::BadgesController < Admin::BaseController
     params.require(:badge).permit(:title, :description, :image, :rule, :category_id, :level)
   end
 
-
   def find_badge
     @badge = Badge.find(params[:id])
   end
-
 end
