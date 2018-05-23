@@ -12,7 +12,7 @@ class TestPassagesController < ApplicationController
     if @test_passage.completed?
       TestsMailer.completed_test(@test_passage).deliver_now
       badge_service = BadgeDistributorService.new(@test_passage)
-      @test_passage.user << badge_service.assign_badges
+      @test_passage.user.badges << badge_service.assign_badges
       redirect_to result_test_passage_path(@test_passage), notice: 'You recieve a Badge' if badge_service.badge_given?
     else
       render :show

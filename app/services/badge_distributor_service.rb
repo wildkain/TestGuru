@@ -14,7 +14,7 @@ class BadgeDistributorService
     Badge.all.select { |badge| send(badge.rule) }
   end
 
-  def first_try?
+  def on_first_try?
     @user.tests.where(id: @test_passage.test_id).count <= 1
   end
 
