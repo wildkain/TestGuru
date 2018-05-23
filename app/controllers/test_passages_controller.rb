@@ -8,12 +8,14 @@ class TestPassagesController < ApplicationController
 
   def update
     @test_passage.accept!(params[:answer_ids])
+    @test_passage.completed if @test_passage.time_over?
 
     if @test_passage.completed?
       TestsMailer.completed_test(@test_passage).deliver_now
       badge_service = BadgeDistributorService.new(@test_passage)
       @test_passage.user.badges << badge_service.assign_badges
-      redirect_to result_test_passage_path(@test_passage), notice: 'You recieve a Badge' if badge_service.badge_given?
+      flash[:notice] = 'You recieve a Badge' if badge_service.badge_given?
+      redirect_to result_test_passage_path(@test_passage)
     else
       render :show
     end
