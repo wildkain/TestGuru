@@ -10,17 +10,12 @@ class BadgeDistributorService
 
   end
 
-  def select_badges
-
-  end
-
   def assign_badges
     Badge.all.select { |badge| send(badge.rule) }
   end
 
   def first_try?
     @user.tests.where(id: @test_passage.test_id).count <= 1
-
   end
 
   def all_tests_in_category?

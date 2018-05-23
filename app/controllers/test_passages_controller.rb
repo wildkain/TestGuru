@@ -1,8 +1,7 @@
-# frozen_string_literal: true
-
 class TestPassagesController < ApplicationController
   before_action :find_test_passage, only: %i[show result update gist]
   before_action :authenticate_user!
+
   def show; end
 
   def result; end
