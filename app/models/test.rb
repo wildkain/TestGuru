@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Test < ApplicationRecord
   has_many :test_passages
   has_many :users, through: :test_passages

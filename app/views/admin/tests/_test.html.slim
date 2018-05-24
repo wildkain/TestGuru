@@ -4,6 +4,7 @@ tr
     = render 'form_inline', test: test == @test ? @test : test
   td class="align-middle" = test_level(test)
   td class="align-middle" = test.questions.count
+  td class="align-middle"  = test.timer
   td class="align-middle"
     = link_to t('links.edit'), edit_admin_test_path(test), class: "btn btn-primary form-inline-link", data: { test_id: test.id}
   td class="align-middle"

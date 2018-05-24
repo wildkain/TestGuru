@@ -1,0 +1,23 @@
+= render 'shared/errors', resource: @badge
+div class="row "
+  div class="col col-md-4 mx-auto"
+    h3 class="text-center mt-3"
+    = form_with model: [:admin, @badge], local:true do |form|
+      div class="form-group"
+        = form.label :title
+        = form.text_field  :title, class: 'form-control'
+      div class="form-group"
+        = form.label :description
+        = form.text_area :description, class: 'form-control'
+      div class="form-group"
+        = form.label :image
+        = form.file_field :image, class: 'form-control-file'
+      div class="form-group"
+        = form.label :rule
+        = form.select(:rule, Badge::RULES.invert,  {:prompt => "Select Rule"}, {:class => 'form-control'} )
+        = form.collection_select(:rule_parameter, Category.all, :id, :title, {}, {id: 'category', class:'form-control hide'})
+        = form.select(:rule_parameter, (1..15).to_a, {}, {id: 'level', class:'form-control hide'})
+      div class="form-group"
+        = form.submit
+      div class="form-group"
+        = link_to "Cancel", admin_badges_path, class: 'btn btn-primary'

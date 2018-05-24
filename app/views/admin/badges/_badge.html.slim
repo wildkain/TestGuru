@@ -1,0 +1,8 @@
+tr
+  td
+    b = badge.title
+  td = image_tag(badge.image.url, size: "150x150") if badge.image.exists?
+  td = badge.description
+  td
+    = link_to t('links.edit'), edit_admin_badge_path(badge), class: 'btn btn-primary'
+    = link_to t('links.delete'), admin_badge_path(badge), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger"

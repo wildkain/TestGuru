@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   #  :lockable, :timeoutable and :omniauthable
@@ -10,6 +12,8 @@ class User < ApplicationRecord
   has_many :authored_tests, class_name: 'Test', foreign_key: :author_id
   has_many :gists
   has_many :feedbacks
+  has_many :user_badges
+  has_many :badges, through: :user_badges
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX },
@@ -31,4 +35,7 @@ class User < ApplicationRecord
     firstname + ' ' + lastname
   end
 
+  def completed_tests
+    test_passages.select(&:completed?)
+  end
 end

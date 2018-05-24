@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TestPassage < ApplicationRecord
   belongs_to :user
   belongs_to :test
@@ -12,6 +14,19 @@ class TestPassage < ApplicationRecord
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
     save!
+  end
+
+  def time_left
+    end_time = created_at + (test.timer * 60)
+    end_time - Time.current
+  end
+
+  def time_over?
+    time_left < 0
+  end
+
+  def time_end
+    (created_at + (test.timer * 60)) if test.timer.present?
   end
 
   def success?
@@ -34,6 +49,9 @@ class TestPassage < ApplicationRecord
     collect_questions.first
   end
 
+  def completed
+    self.current_question = nil
+  end
   private
 
   def before_validation_set_questions
@@ -45,7 +63,7 @@ class TestPassage < ApplicationRecord
   end
 
   def correct_answer?(answer_ids)
-    correct_answers.ids.sort == answer_ids.map(&:to_i).sort
+    correct_answers.ids.sort == answer_ids&.map(&:to_i)&.sort
   end
 
   def correct_answers

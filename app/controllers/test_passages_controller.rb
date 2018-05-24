@@ -1,15 +1,20 @@
 class TestPassagesController < ApplicationController
   before_action :find_test_passage, only: %i[show result update gist]
   before_action :authenticate_user!
+
   def show; end
 
   def result; end
 
   def update
     @test_passage.accept!(params[:answer_ids])
+    @test_passage.completed if @test_passage.time_over?
 
     if @test_passage.completed?
       TestsMailer.completed_test(@test_passage).deliver_now
+      badge_service = BadgeDistributorService.new(@test_passage)
+      @test_passage.user.badges << badge_service.assign_badges
+      flash[:notice] = 'You recieve a Badge' if badge_service.badge_given?
       redirect_to result_test_passage_path(@test_passage)
     else
       render :show
@@ -20,7 +25,7 @@ class TestPassagesController < ApplicationController
     result = GistQuestionService.new(@test_passage.current_question).call
     if successed?(result)
       current_user.gists.create(question_id: @test_passage.current_question_id, path: result.html_url)
-      flash[:notice] =  t('.success', gist_url: view_context.link_to('Gist', result.html_url, :target => '_blank'))
+      flash[:notice] = t('.success', gist_url: view_context.link_to('Gist', result.html_url, target: '_blank'))
     else
       flash[:alert] = t('.failure')
     end

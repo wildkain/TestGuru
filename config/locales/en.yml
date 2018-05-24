@@ -70,8 +70,26 @@ en:
         t_fullname: "Fullname"
         t_email: "Email"
         t_datetime: "Date|Time"
+    badges:
+      index:
+        header: "Manage badges"
+        t_title: "Title"
+        t_image: "Image"
+        t_decription: "Description"
+        t_actions: "Actions"
+      new:
+        header: "Add new Badge"
+      edit:
+        header: "Edit Badge"
 
-
+  badges:
+    index:
+      tab_my_badges: "My Badges"
+      tab_all_badges: "All Badges"
+      t_title: "Title"
+      t_image: "Image"
+      t_decription: "Description"
+      t_actions: "Actions"
   tests:
     index:
       header: "Available Tests"

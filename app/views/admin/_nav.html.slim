@@ -14,6 +14,8 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
       li.nav-item.active
         =<> link_to t('links.navbar.feedbacks'), admin_feedbacks_path, class: 'nav-link'
       li.nav-item.active
+        =<> link_to t('links.navbar.badges'), admin_badges_path, class: 'nav-link'
+      li.nav-item.active
         =<> link_to t('links.navbar.logout'), destroy_user_session_path, method: :delete, class: 'nav-link'
       li.nav-item.active
         = link_to t('links.navbar.contact'), new_feedback_path, class: 'nav-link'

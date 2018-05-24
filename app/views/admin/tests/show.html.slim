@@ -3,6 +3,7 @@ h3 = t('admin.tests.show.title', title: @test.title)
 div id="new_div"
   p = t('admin.tests.show.level', level: @test.level)
   p = t('admin.tests.show.counter', count: @test.questions.count)
+  p Timer : #{@test.timer} minutes
 
   ol
     = render partial: "admin/questions/question", collection: @test.questions
