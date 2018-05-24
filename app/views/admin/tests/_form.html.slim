@@ -1,15 +1,17 @@
 = render 'shared/errors', resource: @test
 = form_with model: [:admin, @test], local: true  do |form|
-  p
+  div class="form-group"
     = form.label :title
-    = form.text_field :title, id: :test_title
-  p
+    = form.text_field :title, id: :test_title, class: 'form-control'
+  div class="form-group"
     = form.label :level
-    = form.select :level, (0..10)
-  p
+    = form.select :level, (0..10), class: 'form-control'
+  div class="form-group"
     = form.label :category_id
-    = form.collection_select :category_id, Category.all, :id, :title, prompt: true
-
+    = form.collection_select :category_id, Category.all, :id, :title, prompt: true, class: 'form-control'
+  div class="form-group"
+    = form.label :timer
+    = form.number_field :timer, in: 1..60, class: 'form-control'
     = form.hidden_field :author_id, :value => current_user.id
-  br
+  div class="form-group"
     = form.submit
