@@ -17,10 +17,8 @@ class TestPassage < ApplicationRecord
   end
 
   def time_left
-    start =  created_at
-    timer =  test.timer
-    end_time = start + (timer * 60)
-    end_time - Time.zone.now
+    end_time = created_at + (test.timer * 60)
+    end_time - Time.current
   end
 
   def time_over?
@@ -28,7 +26,7 @@ class TestPassage < ApplicationRecord
   end
 
   def time_end
-    (created_at + (test.timer * 60))
+    (created_at + (test.timer * 60)) if test.timer.present?
   end
 
   def success?
