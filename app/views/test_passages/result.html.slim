@@ -1,23 +1,22 @@
 div class="row justify-content-center mt-3"
   div class="col col-md-4"
-    h3  #{t('.header', title: @test_passage.test.title)}
-
-    div class="card border-primary"
+    div class="card bg-default"
+      div class="card-header text-center bg-light"
+        h5  #{t('.header', title: @test_passage.test.title)}
       div class="card-body"
         h3 #{t('.info')}
         li #{t('.all_q')}: #{@test_passage.number_of_questions}
         li #{t('.correct')}: #{@test_passage.correct_questions}
         li #{t('.rate')}: #{@test_passage.count_percent_correct} %
 
-div class="row justify-content-center mt-3"
-  div class="col col-md-12"
-    div class="test-result"
-      - if @test_passage.success?
-        div class="result-success"
-          = image_tag("success.png", size:"250x200")
-      - else
-        div class="result-fail"
-          = image_tag("fail.png", size:"250x200")
+      div class="card-footer"
+        div class="test-result"
+          - if @test_passage.success?
+            div class="result-success"
+              = image_tag("success.png", size:"150x100")
+          - else
+            div class="result-fail"
+              = image_tag("fail.png", size:"150x100")
 
 
 
