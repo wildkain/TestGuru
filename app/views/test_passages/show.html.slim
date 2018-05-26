@@ -1,7 +1,7 @@
 div class="row justify-content-center mt-4"
   div class="col col-md-8"
     div class="card bg-default"
-      h2 class="card-header m-3" = t('.header', title: @test_passage.test.title)
+      h2 class="card-header" = t('.header', title: @test_passage.test.title)
 
       div class="progress mt-2 ml-2 mr-2"
         = content_tag :div, '',class: 'progress-bar test-progress-bar', data: { test_progress: count_progress_percent(@test_passage) }

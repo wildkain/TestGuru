@@ -1,7 +1,7 @@
 tr
   td = test.title
-  td = test_level(test)
-  td = test.questions.count
+  td class="text-center" = test_level(test)
+  td class="text-center" = test.questions.count
 
   td
     = button_to "#{t('.t_start')}", start_test_path(test), class: "btn btn-primary"

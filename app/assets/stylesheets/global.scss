@@ -17,13 +17,18 @@
 
 }
 
+.navbar-menu {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
 .footer {
-  left: 0;
+  position: static;
   bottom: 0;
   width: 100%;
-  background-color: #e4e7ea;
-  color: black;
-  text-align: center;
+  height: 120px;
+  line-height: 10px;
+  background-color: #f3f3f3;
   border-radius: 5px;
 }
 

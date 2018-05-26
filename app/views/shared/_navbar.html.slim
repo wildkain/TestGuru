@@ -1,37 +1,37 @@
-div class="text-md-right"
+.container-fluid.navbar-menu
+  nav.navbar.navbar-expand-lg.navbar-light.bg-light
+    => link_to 'Test Guru', root_path, class: 'navbar-brand'
+    button.navbar-toggler type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"
+      span.navbar-toggler-icon
 
-nav.navbar.navbar-expand-lg.navbar-light.bg-light
-  => link_to 'Test Guru', root_path, class: 'navbar-brand'
-  button.navbar-toggler type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"
-    span.navbar-toggler-icon
-
-  .collapse.navbar-collapse#navbarText
-    ul.navbar-nav.mr-auto
-      - if user_signed_in?
-        li.nav-item
-          = link_to t('links.navbar.badges'), badges_path, class: 'nav-link'
-        - if current_user.admin?
+    .collapse.navbar-collapse#navbarText
+      ul.navbar-nav.mr-auto
+        - if user_signed_in?
           li.nav-item
-            =< link_to t('links.navbar.panel'), admin_tests_path, class: 'nav-link'
+            = link_to t('links.navbar.badges'), badges_path, class: 'nav-link'
+          - if current_user.admin?
+            li.nav-item
+              =< link_to t('links.navbar.panel'), admin_tests_path, class: 'nav-link'
+          li.nav-item
+            =< link_to t('links.navbar.logout'), destroy_user_session_path, method: :delete, class: 'nav-link'
+        - else
+          li.nav-item
+            => link_to t('links.navbar.login'), new_user_session_path, class: 'nav-link'
+          li.nav-item
+            =< link_to t('links.navbar.signup'), new_user_registration_path, class: 'nav-link'
         li.nav-item
-          =< link_to t('links.navbar.logout'), destroy_user_session_path, method: :delete, class: 'nav-link'
-      - else
+          = link_to t('links.navbar.contact'), new_feedback_path, class: 'btn'
+          = octicon "comment"
+      ul.navbar-nav
         li.nav-item
-          => link_to t('links.navbar.login'), new_user_session_path, class: 'nav-link'
+          => link_to 'English', url_for(lang: :en), class: 'btn'
         li.nav-item
-          =< link_to t('links.navbar.signup'), new_user_registration_path, class: 'nav-link'
-      li.nav-item
-        = link_to t('links.navbar.contact'), new_feedback_path, class: 'btn'
-        = octicon "comment"
-    ul.navbar-nav
-      li.nav-item
-        => link_to 'English', url_for(lang: :en), class: 'btn'
-      li.nav-item
-        =< link_to 'Русский', url_for(lang: :ru), class: 'btn'
-div class="row"
-  div class="col"
-    div class="greeting"
-      - if user_signed_in?
-        ' Добро пожаловать,
-        b => current_user.firstname
+          =< link_to 'Русский', url_for(lang: :ru), class: 'btn'
+  .container-fluid
+    div class="row"
+      div class="col"
+        div class="greeting mt-2"
+          - if user_signed_in?
+            ' Добро пожаловать,
+            b => current_user.firstname
 
